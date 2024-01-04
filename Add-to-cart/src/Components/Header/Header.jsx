@@ -1,9 +1,10 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
-import { totalProduct } from "../../Store/ProductSlice";
 
 function Header() {
+  const totalProduct = useSelector((state) => state.product.totalproducts);
+
   return (
     <>
       <header className="w-full bg-blue-200 sticky top-0">
@@ -30,7 +31,12 @@ function Header() {
             </NavLink>
           </div>
           <div>
-            <Link to="/wishlist">WishList</Link>
+            <Link to="/wishlist">
+              WishList{" "}
+              <sup className="bg-white text-sm rounded-full">
+                {totalProduct > 0 && totalProduct}
+              </sup>
+            </Link>
           </div>
         </div>
       </header>

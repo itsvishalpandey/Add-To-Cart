@@ -3,7 +3,7 @@ import WishlistCard from "./WishlistCard";
 import { useSelector } from "react-redux";
 
 function Wishlist() {
-  const characters = useSelector((state) => state.product);
+  const characters = useSelector((state) => state.product.items);
 
   return (
     <>

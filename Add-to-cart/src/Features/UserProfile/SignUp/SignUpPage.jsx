@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-function SignUpPage({ setUserInput }) {
+function SignUpPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (
       username.trim() === "" ||
@@ -16,12 +17,24 @@ function SignUpPage({ setUserInput }) {
       return alert("All fields are mandatory");
     }
 
-    setUserInput({ username, email, password });
-    alert("user created");
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/users/register",
+        { username, email, password }
+      );
 
-    setUsername("");
-    setEmail("");
-    setPassword("");
+      if (response.data === "User already registered") {
+        alert("User already registered");
+      } else {
+        alert("User created");
+        setUsername("");
+        setEmail("");
+        setPassword("");
+      }
+    } catch (error) {
+      console.error("Error registering user:", error);
+      alert("Error registering user");
+    }
   };
 
   return (

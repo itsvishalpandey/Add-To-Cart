@@ -32,7 +32,7 @@ router.post("/register", async (req, res) => {
     });
 
     res.json({
-      message: "User Created Successfully",
+      message: "User Created Successfully !!",
     });
   } catch (error) {
     res.json({

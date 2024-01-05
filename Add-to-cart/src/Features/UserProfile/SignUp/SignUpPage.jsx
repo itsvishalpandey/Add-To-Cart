@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function SignUpPage() {
+function SignUpPage({ setUserInput }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +15,9 @@ function SignUpPage() {
     ) {
       return alert("All fields are mandatory");
     }
+
+    setUserInput({ username, email, password });
+    alert("user created");
 
     setUsername("");
     setEmail("");

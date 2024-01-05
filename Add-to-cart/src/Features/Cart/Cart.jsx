@@ -28,7 +28,7 @@ function Cart() {
             .filter((character) =>
               search.toLowerCase() === ""
                 ? character
-                : character.type.toLowerCase().includes(search)
+                : character.gameSeries.toLowerCase().includes(search)
             )
             .map((character, index) => (
               <CartPage key={index} character={character} />

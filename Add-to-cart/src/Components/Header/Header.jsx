@@ -19,6 +19,14 @@ function Header() {
                 `${isActive ? "text-green-600" : "text-black"} px-4`
               }
             >
+              SignUp
+            </NavLink>
+            <NavLink
+              to="/home"
+              className={({ isActive }) =>
+                `${isActive ? "text-green-600" : "text-black"} px-4`
+              }
+            >
               Home
             </NavLink>
             <NavLink

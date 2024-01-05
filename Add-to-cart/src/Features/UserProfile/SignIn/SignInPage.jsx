@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { SignInApi } from "./SignInApi";
 
 function SignInPage() {
   const [email, setEmail] = useState("");
@@ -10,6 +11,8 @@ function SignInPage() {
     if (email.trim() === "" || password.trim() === "") {
       return alert("All fields are mandatory");
     }
+
+    SignInApi({ email, password });
 
     setEmail("");
     setPassword("");

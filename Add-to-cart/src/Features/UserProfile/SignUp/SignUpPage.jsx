@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { SignUpApi } from "./SignUpApi";
 
 function SignUpPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (
       username.trim() === "" ||
@@ -17,24 +17,11 @@ function SignUpPage() {
       return alert("All fields are mandatory");
     }
 
-    try {
-      const response = await axios.post(
-        "http://localhost:3000/users/register",
-        { username, email, password }
-      );
+    SignUpApi({ username, email, password });
 
-      if (response.data === "User already registered") {
-        alert("User already registered");
-      } else {
-        alert("User created");
-        setUsername("");
-        setEmail("");
-        setPassword("");
-      }
-    } catch (error) {
-      console.error("Error registering user:", error);
-      alert("Error registering user");
-    }
+    setUsername("");
+    setEmail("");
+    setPassword("");
   };
 
   return (

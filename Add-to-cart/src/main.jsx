@@ -17,13 +17,15 @@ import Series from "./Components/Series/Series.jsx";
 import Wishlist from "./Components/Wishlist/Wishlist.jsx";
 import store from "./Store/Store.js";
 import SignUp from "./Features/UserProfile/SignUp/SignUp.jsx";
+import SignIn from "./Features/UserProfile/SignIn/SignIn.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="" element={<SignUp />} />
+      <Route path="" element={<Home />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
       <Route path="series" element={<Series />} />
-      <Route path="home" element={<Home />} />
       <Route path="wishlist" element={<Wishlist />} />
     </Route>
   )

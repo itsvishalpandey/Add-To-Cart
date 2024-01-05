@@ -1,14 +1,14 @@
 import React from "react";
-import SignUpPage from "./SignUpPage";
+import SignInPage from "./SignInPage";
 
-function SignUp() {
+function SignIn() {
   return (
     <>
       <div className="w-full h-screen flex justify-center items-center bg-gray-100 absolute top-0">
-        <SignUpPage />
+        <SignInPage />
       </div>
     </>
   );
 }
 
-export default SignUp;
+export default SignIn;

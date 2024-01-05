@@ -7,14 +7,19 @@ export const SignInApi = async ({ email, password }) => {
       password,
     });
 
-    if (response.data === "Username or password doesn't match") {
-      alert("Username or password doesn't match");
+    console.log(response.data.token);
+    console.log(response.data);
+
+    if (response.data.message === "Login Successfull") {
+      localStorage.setItem("authToken", response.data.token);
+      alert("Login successful");
+
+      window.location.href = "/profile";
     } else {
-      alert("login successfull");
+      alert("Username or password doesn't match");
     }
   } catch (error) {
-    console.error("Error registering user:", error);
-    alert("Error registering user");
+    console.error("Error logging in:", error);
+    alert("Error logging in");
   }
-  return null;
 };

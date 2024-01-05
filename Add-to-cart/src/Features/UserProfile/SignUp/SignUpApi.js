@@ -12,6 +12,7 @@ export const SignUpApi = async ({ username, email, password }) => {
       alert("User already registered");
     } else {
       alert("User created");
+      window.location.href = "/signin";
     }
   } catch (error) {
     console.error("Error registering user:", error);

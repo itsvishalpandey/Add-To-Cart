@@ -26,13 +26,22 @@ const authToken = localStorage.getItem("authToken");
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="" element={<Home />} />
-      <Route path="series" element={<Series />} />
-      <Route path="wishlist" element={<Wishlist />} />
+      {authToken && (
+        <>
+          <Route path="home" element={<Home />} />
+          <Route path="series" element={<Series />} />
+          <Route path="wishlist" element={<Wishlist />} />
+          <Route path="profile" element={<ProfilePage />} />
+        </>
+      )}
 
-      <Route path="signin" element={<SignIn />} />
-      <Route path="signup" element={<SignUp />} />
-      <Route path="profile" element={<ProfilePage />} />
+      {!authToken && (
+        <>
+          <Route path="" element={<SignIn />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="signup" element={<SignUp />} />
+        </>
+      )}
     </Route>
   )
 );

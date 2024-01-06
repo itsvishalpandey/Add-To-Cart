@@ -14,7 +14,7 @@ export const SignInApi = async ({ email, password }) => {
       localStorage.setItem("authToken", response.data.token);
       alert("Login successful");
 
-      window.location.href = "/profile";
+      window.location.href = "/home";
     } else {
       alert("Username or password doesn't match");
     }

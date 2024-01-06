@@ -7,14 +7,14 @@ function Header() {
 
   return (
     <>
-      <header className="w-full shadow-lg bg-slate-400 sticky top-0 z-10 py-2">
+      <header className="w-full shadow-lg bg-slate-400 sticky top-0 py-2">
         <div className="w-11/12 mx-auto flex justify-between py-2">
           <div className="text-xl font-bold">
-            <Link to="">Games</Link>
+            <Link to="/home">Games</Link>
           </div>
           <div>
             <NavLink
-              to=""
+              to="/home"
               className={({ isActive }) =>
                 `${
                   isActive ? "text-white" : "text-black"
@@ -35,12 +35,18 @@ function Header() {
             </NavLink>
           </div>
           <div>
-            <Link
+            {/* <Link
               to="/signin"
               className="px-4 py-2 hover:border hover:bg-white hover:rounded-3xl hover:text-black"
             >
               Sign in
-            </Link>
+            </Link> */}
+            {/* <Link
+              to="/signin"
+              className="px-4 py-2 hover:border hover:bg-white hover:rounded-3xl hover:text-black"
+            >
+              Sign Up
+            </Link> */}
             <Link
               to="/profile"
               className="px-4 py-2 hover:border hover:bg-white hover:rounded-3xl hover:text-black"

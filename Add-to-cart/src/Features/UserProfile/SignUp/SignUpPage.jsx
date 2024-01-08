@@ -26,8 +26,8 @@ function SignUpPage() {
 
   return (
     <>
-      <div className="w-3/12 bg-white shadow-lg">
-        <form onSubmit={handleSubmit} className="px-8 py-6">
+      <div className="w-3/12 bg-white shadow-lg mt-12 ">
+        <form onSubmit={handleSubmit} className="px-8 py-4">
           <div className="my-6 text-center">
             <p className="text-gray-500">Welcome!</p>
             <h1 className="text-xl font-semibold mt-1">SignUp Page</h1>

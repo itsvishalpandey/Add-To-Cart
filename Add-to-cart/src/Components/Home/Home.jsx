@@ -1,10 +1,10 @@
 import React from "react";
-import Cart from "../../Features/Cart/Cart";
 
 function Home() {
   return (
     <>
-      <Cart />
+      {/* <Cart /> */}
+      <div>Home</div>
     </>
   );
 }

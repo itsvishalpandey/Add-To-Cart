@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../Store/ProductSlice";
+import { addProduct } from "../../Store//ProductSlice";
 
-function CartCard({ character }) {
+function SeriesData({ character }) {
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
@@ -12,11 +12,11 @@ function CartCard({ character }) {
   return (
     <>
       <div className=" mx-auto rounded shadow-2xl">
-        <div className="w-60 h-52">
+        <div className="w-60 h-60">
           <img
             src={character.image}
             alt={character.image}
-            className="h-full w-full object-cover rounded-t "
+            className="h-full w-full object-fit rounded-t"
           />
         </div>
 
@@ -40,4 +40,4 @@ function CartCard({ character }) {
   );
 }
 
-export default CartCard;
+export default SeriesData;

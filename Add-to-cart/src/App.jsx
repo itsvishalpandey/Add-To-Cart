@@ -8,7 +8,8 @@ function App() {
 
   return (
     <>
-      {location !== "/signin" && location !== "/signup" && <Header />}
+      {/* {location !== "/signin" && location !== "/signup" && <Header />} */}
+      <Header />
       <Outlet />
     </>
   );
